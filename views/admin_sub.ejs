@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Document</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: 'Titillium Web', sans-serif;
+        }
+        header{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.2);
+            display: block;
+            position: fixed;
+            background-color: #6DA9E4;
+            width:100%;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        nav .link{
+            margin: 1%;
+            padding: 2px;
+            background-color: #AFD3E2;;
+            padding: 9px;
+            border-radius: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.2);
+            transition: all 0.2s ease-in-out;
+        }
+        nav .link a{
+            transition: all 0.2s ease-in-out;
+        }
+        nav .link:hover a{
+            cursor:pointer;
+            color: whitesmoke;
+        }
+        nav .l1 a{
+            color: whitesmoke;
+        }
+        nav .l1{
+            background-color: #146C94;
+        }
+        nav .link:hover{
+            cursor:pointer;
+            background-color: #146C94;
+            transform: translateX(20px);
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.8);
+        }
+        nav .link a{
+            text-decoration: none;
+        }
+        .content{
+            margin: 1%;
+            margin-top:-0.5%;
+            padding: 20px;
+            background-color: #A5C0DD;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .head{
+            flex:1;
+            margin:2%;
+            padding:5px;
+
+        }
+        .head2{
+            margin-right:3%;
+        }
+        nav .l6{
+            margin-left:50%;
+            background-color: red;
+        }
+        nav .l6 a{
+            color: white;
+        }
+        nav .l6:hover{
+            background-color: red;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.8);
+        }
+        .fixed{
+            background-color: #f0f2f5;
+        }
+        input{
+            margin: 2%;
+            padding:5px;
+            border-radius: 5px;
+            border:0px;
+        }
+        .cards{
+            padding: 20px;
+            background-color: #dededf;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        td{
+            margin: 3%;
+        }
+        #sub{
+            transition: all 0.2s ease-in-out;
+        }
+        #sub:hover{
+            cursor: pointer;
+            background-color: #AFD3E2;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="head head1"><span><h2 style="font-weight: 700;margin:0%;background-color:#6DA9E4;border-radius: 10px;font-family: 'Titillium Web', sans-serif;display: block;">Anil Neeukonda Institute of Technology and Science</h2><h4 style="font-weight: 700;margin:0%;background-color:#6DA9E4;border-radius: 10px;font-family: 'Titillium Web', sans-serif;display: block;margin-left: 5%;">(Permanent Affiliation by Andhra University&Approved by AICTE)</h4></span></div>
+            <div class="head head2"><h1 style="font-weight: 700;margin:0%;background-color:#6DA9E4;border-radius: 10px;font-family: 'Titillium Web', sans-serif;margin-left:14%;color:#ECF9FF;">Student Attendance Management</h1></div>
+        </div>
+        <div class="fixed">
+            <nav>
+                <div class="link l1"><a href="/admin_dash">Home</a></div>
+                <div class="link l2"><a href="/admin_faculty">New Faculty</a></div>
+                <div class="link l3"><a href="/admin_class">Class</a></div>
+                <div class="link l3"><a href="/admin_sub">Assign Sub</a></div>
+                <div class="link l5"><a href="/admin_addsub">Add Subject</a></div>
+                <div class="link l6"><a href="/logout">Logout</a></div>
+            </nav>
+        </div>
+    </header>
+    <div class="temp" style="min-height: 40vh;width: 100%;"></div>
+    <div class="content">
+        <div class="cards">
+            <h2 align="center">Please enter New class data</h2>
+            <hr>
+        <form action="/sub" method="post">
+           <table>
+            <tr>
+                <td><label for="">Enter Faculty:</label></td>
+                <td><select name="sel1">
+                    <%
+                    for(var i = 0; i< row.length; i++) {%> 
+                    <option name="sel1" value="<%= row[i].fid%>" selected>
+                    <%= row[i].fname%>
+                    </option>
+                    <% }%>
+                    </select required></td>
+            </tr>
+            <tr>
+                <td><label for="">Enter Subject:</label></td>
+                <td>
+                    <select name="sel">
+                        <%
+                        for(var i = 0; i< row1.length; i++) {
+                            var samp=row1[i].course_no;
+                            %> 
+                        <option name="sel" value="<%= row1[i].course_no%>" selected>
+                        <%= row1[i].course_name%>
+                        </option>
+                        <% }%>
+                        </select required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Enter class:</label></td>
+                <td>
+                    <select name="sel2">
+                        <%
+                        for(var i = 0; i< row2.length; i++) {
+                            var samp=row2[i].class;
+                            %> 
+                        <option name="sel2" value="<%= row2[i].class%>" selected>
+                        <%= row2[i].class%>
+                        </option>
+                        <% }%>
+                        </select required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input id="sub" style="font-size: 15px;" type="submit" name="submit"></td>
+            </tr>
+           </table>
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+<script>
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 2000
+    });
+    sr.reveal('.link',{interval:100});
+        </script>
+</html>

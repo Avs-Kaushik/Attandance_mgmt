@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance </title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+        *{
+            margin:0%;
+            padding:0px;
+        }
+        body{
+            font-family: 'Titillium Web', sans-serif;
+        }
+        .container{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .box{
+            flex:1;
+            margin:2%;
+            padding:10px;
+            border-radius:10px;
+            box-shadow:1px 3px 18px rgb(0,0,0,0.2);
+            min-height:50vh;
+            background-color: #DAF5FF;
+        }
+        .box1{
+            background-color: #00a2ea;
+            padding: 0px;
+        }
+        .box2{
+            background-color: #00a2ea;
+            padding: 0px;
+        }
+
+        .temp1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .temp{
+            width:100%;
+            height:20vh;
+            background-color: #6DA9E4;
+        }
+        .head{
+            flex:1;
+            margin:2%;
+            padding:5px;
+
+        }
+        .head2{
+            margin-right:3%;
+        }
+
+        .bt:hover{
+            cursor: pointer;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.2);
+            transform: translateX(10px);
+        }
+        a{
+            text-decoration: none;
+        }
+      </style>
+</head>
+<body>
+    <header style="width:100%;position: fixed;background-color:#6DA9E4;box-shadow: 1px 3px 18px rgb(0,0,0,0.2);">
+        <div class="container">
+            <div class="head head1"><span><h2 style="font-weight: 700;margin:0%;background-color:#6DA9E4;border-radius: 10px;font-family: 'Titillium Web', sans-serif;display: block;">Anil Neeukonda Institute of Technology and Science</h2><h4 style="font-weight: 700;margin:0%;background-color:#6DA9E4;border-radius: 10px;font-family: 'Titillium Web', sans-serif;display: block;margin-left: 5%;">(Permanent Affiliation by Andhra University&Approved by AICTE)</h4></span></div>
+            <div class="head head2"><h1 style="font-weight: 700;margin:0%;background-color:#6DA9E4;border-radius: 10px;font-family: 'Titillium Web', sans-serif;margin-left:14%;color:#ECF9FF;">Student Attendance Management</h1></div>
+        </div>
+</header>
+    <div class="temp"></div>
+   <div class="container">
+    <div class="box box1"><img style="border-top-right-radius: 10px;border-top-left-radius: 10px;" src="2650404.jpg" width="100%" alt="">
+        <div class="temp1"><a href="/admin_login" class="temp1 bt" style="background-color: #DAF5FF; font-family: 'Titillium Web', sans-serif;margin:2%;width:100px;height: 40px;font-size:15px;border-radius: 10px;transition: all 0.5s ease-out;">Admin Login</a></div></div>
+    <div class="box box2">
+        <img style="border-top-right-radius: 10px;border-top-left-radius: 10px;" src="2103819.jpg" width="100%" alt=""><div class="temp1"><a href="/faculty_login" class="temp1 bt" style="background-color: #DAF5FF; font-family: 'Titillium Web', sans-serif;margin:2%;width:100px;height: 40px;font-size:15px;border-radius: 10px;transition: all 0.5s ease-out;">Faculty Login</a></div></div>
+   </div>
+</body>
+</html>

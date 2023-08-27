@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th rowspan="2">Sno</th>
+    <%for(var i= 0; i< subjects.length; i++)
+    { %>
+      <th><%= subjects[i][0]%></th>
+      <% }%> 
+  </tr>
+  <tr>
+    <%for(var i= 0; i< subjects.length; i++)
+    { %>
+      <th><%= subjects[i][1]%></th>
+      <% }%> 
+  </tr>
+  <%for(var i = 0; i< data.length; i++) {
+    %>
+      <tr>
+        <%for(var j = 0; j< data[0].length; j++) {%>
+        <td><%= data[i][j]%></td>
+        <% }%>
+      </tr>
+      <% }%>
+  </table>
